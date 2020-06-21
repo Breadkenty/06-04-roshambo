@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/kaq4chi.css");
 :root {
   font: 16px / 1 sans-serif;
 }
@@ -9,4 +10,150 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: #F4E88D;
+  font-family: gothic-open-shaded, sans-serif;
+}
+
+.main-menu {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  margin-left: 20%;
+}
+
+nav {
+  margin-top: 10%;
+  margin-left: 20%;
+  display: flex;
+}
+
+nav h2 {
+  cursor: pointer;
+}
+
+nav h2:first-child {
+  margin-right: 30px;
+  padding-right: 30px;
+  border-right: 2px solid black;
+}
+
+nav h2:nth-child(2) {
+  color: red;
+}
+
+.rules {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+}
+
+.rules div {
+  width: 100vw;
+  height: 90vh;
+  background-color: #F4E88D;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.close-rules {
+  width: 20px;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.rule-image {
+  width: 80vw;
+}
+
+.player-one-turn, .player-two-turn {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  background-color: #F4E88D;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icons li {
+  list-style: none;
+}
+
+.player-one-turn img, .player-two-turn img {
+  width: 70px;
+  cursor: pointer;
+}
+
+.pre-results {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4E88D;
+}
+
+input {
+  border: none;
+  width: 50vw;
+  height: 50px;
+  border-radius: 5px;
+  font-family: bungee, sans-serif;
+  background-color: black;
+  color: #F4E88D;
+  cursor: pointer;
+}
+
+.results {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  background: #F4E88D;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-choice {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.player-choice div:first-child {
+  margin-right: 70px;
+}
+
+.player-choice div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.results h2:nth-of-type(2) {
+  margin-top: 60px;
+}
+
+.show-screen {
+  display: flex;
 }

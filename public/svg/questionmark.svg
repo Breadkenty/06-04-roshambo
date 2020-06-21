@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90.703" height="96" viewBox="0 0 90.703 96">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="90.703" height="96" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Component_1_1" data-name="Component 1 – 1" clip-path="url(#clip-path)">
+    <g id="scissors" transform="translate(-45.3 -36.8)">
+      <g id="Group_4" data-name="Group 4" transform="translate(45.8 39.8)">
+        <path id="path848_3_" d="M39.8,84.652a44.852,44.852,0,1,1,89.7,0" transform="translate(-39.8 -39.8)" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width="1"/>
+        <path id="path848_2_" d="M84.652,1042.952A44.852,44.852,0,0,1,39.8,998.1" transform="translate(-39.8 -953.248)" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width="1"/>
+        <path id="path848" d="M1042.952,998.1a44.852,44.852,0,0,1-44.852,44.852" transform="translate(-953.248 -953.248)" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width="1"/>
+        <text id="_" data-name="?" transform="translate(32 72)" font-size="80" font-family="Phosphate-Inline, Phosphate"><tspan x="0" y="0">?</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
