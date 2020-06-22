@@ -16,7 +16,7 @@ body {
 
 .main-menu {
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
 }
@@ -29,20 +29,37 @@ nav {
   margin-top: 10%;
   margin-left: 20%;
   display: flex;
+  align-items: center;
 }
 
 nav h2 {
   cursor: pointer;
 }
 
-nav h2:first-child {
-  margin-right: 30px;
-  padding-right: 30px;
-  border-right: 2px solid black;
+nav h2:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 2px #F4E88D;
+  transform: translate(-1px, -1px);
+  -webkit-animation: radiate-small 0.75s infinite;
 }
 
-nav h2:nth-child(2) {
-  color: red;
+@-webkit-keyframes radiate-small {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+nav div {
+  margin: 0 25px 5px;
+  height: 50%;
+  width: 2px;
+  background-color: black;
 }
 
 .rules {
@@ -66,6 +83,10 @@ nav h2:nth-child(2) {
   margin-top: 20px;
   margin-right: 20px;
   cursor: pointer;
+}
+
+.close-rules:hover {
+  -webkit-animation: radiate-small 0.75s infinite;
 }
 
 .rule-image {
@@ -95,9 +116,27 @@ nav h2:nth-child(2) {
   list-style: none;
 }
 
-.player-one-turn img, .player-two-turn img {
-  width: 70px;
+.icons img {
+  margin: 5px;
+  width: 60px;
   cursor: pointer;
+}
+
+.icons img:hover {
+  transform: scale(1.1);
+  -webkit-animation: radiate 0.75s infinite;
+}
+
+@-webkit-keyframes radiate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .pre-results {
@@ -112,7 +151,6 @@ nav h2:nth-child(2) {
 }
 
 input {
-  border: none;
   width: 50vw;
   height: 50px;
   border-radius: 5px;
@@ -120,6 +158,20 @@ input {
   background-color: black;
   color: #F4E88D;
   cursor: pointer;
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+input:hover {
+  font-size: 1rem;
+  border: 1px solid;
+  outline-color: black;
+  outline-offset: 5px;
 }
 
 .results {
@@ -152,6 +204,26 @@ input {
 
 .results h2:nth-of-type(2) {
   margin-top: 60px;
+  -webkit-animation: bounce 0.75s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+  30% {
+    transform: scale(1, 0.8) translate(0px, 10px);
+  }
+  75% {
+    transform: scale(1, 1) translate(0px, -5px);
+  }
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
+.show-winner {
+  -webkit-animation: radiate 0.75s infinite;
 }
 
 .show-screen {

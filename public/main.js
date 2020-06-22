@@ -1,7 +1,76 @@
 let playerOneChoice = ''
 let playerTwoChoice = ''
 
+function updatePlayerSelectionImage() {
+  document.querySelector(
+    '.player-one-random-choice img'
+  ).src = `svg/${playerOneChoice}.svg`
+
+  document.querySelector(
+    '.player-two-random-choice img'
+  ).src = `svg/${playerTwoChoice}.svg`
+}
+
+function whoWon() {
+  const playerOneChoiceImage = document.querySelector(
+    '.player-one-random-choice img'
+  )
+  const playerTwoChoiceImage = document.querySelector(
+    '.player-two-random-choice img'
+  )
+
+  if (
+    (playerOneChoice === 'rock' && playerTwoChoice === 'scissor') ||
+    (playerOneChoice === 'rock' && playerTwoChoice === 'lizard')
+  ) {
+    playerOneChoiceImage.classList.add('show-winner')
+    return 'Player one wins!'
+  } else if (
+    (playerOneChoice === 'paper' && playerTwoChoice === 'rock') ||
+    (playerOneChoice === 'paper' && playerTwoChoice === 'spock')
+  ) {
+    playerOneChoiceImage.classList.add('show-winner')
+    return 'Player one wins!'
+  } else if (
+    (playerOneChoice === 'scissor' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'scissor' && playerTwoChoice === 'lizard')
+  ) {
+    playerOneChoiceImage.classList.add('show-winner')
+    return 'Player one wins!'
+  } else if (
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'spock')
+  ) {
+    playerOneChoiceImage.classList.add('show-winner')
+    return 'Player one wins!'
+  } else if (
+    (playerOneChoice === 'spock' && playerTwoChoice === 'rock') ||
+    (playerOneChoice === 'spock' && playerTwoChoice === 'scissor')
+  ) {
+    playerOneChoiceImage.classList.add('show-winner')
+    return 'Player one wins!'
+  } else if (playerOneChoice === playerTwoChoice) {
+    return "it's a draw!"
+  } else {
+    playerTwoChoiceImage.classList.add('show-winner')
+    return 'Player two wins!'
+  }
+}
+
+function resetGame() {
+  playerOneChoice = ''
+  playerTwoChoice = ''
+  document.querySelector('.main-menu').classList.add('show-screen')
+  document
+    .querySelector('.player-one-random-choice img')
+    .classList.remove('show-winner')
+  document
+    .querySelector('.player-two-random-choice img')
+    .classList.remove('show-winner')
+}
+
 const main = () => {
+  const mainMenu = document.querySelector('.main-menu')
   const rules = document.querySelector('.rules')
   const playerOneTurnScreen = document.querySelector('.player-one-turn')
   const playerOneChoices = document.querySelectorAll('.player-one-turn li')
@@ -11,27 +80,27 @@ const main = () => {
   const resultScreen = document.querySelector('.results')
 
   // Display rules
-
   document
-    .querySelector('nav h2:nth-child(2)')
+    .querySelector('nav h2:nth-child(3)')
     .addEventListener('click', function () {
+      mainMenu.classList.remove('show-screen')
       rules.classList.add('show-screen')
     })
 
   document.querySelector('.close-rules').addEventListener('click', function () {
     rules.classList.remove('show-screen')
+    mainMenu.classList.add('show-screen')
   })
 
   // Start player turn
-
   document
     .querySelector('nav h2:first-child')
     .addEventListener('click', function () {
       playerOneTurnScreen.classList.add('show-screen')
+      mainMenu.classList.remove('show-screen')
     })
 
   // Player one turn
-
   playerOneChoices.forEach(function (choice) {
     choice.addEventListener('click', function (event) {
       const choiceSelected = event.target.className
@@ -42,7 +111,6 @@ const main = () => {
   })
 
   // Player two turn
-
   playerTwoChoices.forEach(function (choice) {
     choice.addEventListener('click', function (event) {
       const choiceSelected = event.target.className
@@ -53,49 +121,24 @@ const main = () => {
   })
 
   // Pre results screen
-
   document
     .querySelector('.pre-results input')
     .addEventListener('click', function () {
       preResultScreen.classList.remove('show-screen')
       resultScreen.classList.add('show-screen')
+      updatePlayerSelectionImage()
+      const winnerDisplay = document.querySelector('.results h2:last-of-type')
+      winnerDisplay.textContent = whoWon()
     })
 
   // Results screen
 
-  const svgToCycle = [
-    {
-      name: 'rock',
-      src: 'svg/rock.svg',
-    },
-    {
-      name: 'paper',
-      src: 'svg/paper.svg',
-    },
-    {
-      name: 'scissor',
-      src: 'svg/scissor.svg',
-    },
-    {
-      name: 'lizard',
-      src: 'svg/lizard.svg',
-    },
-    {
-      name: 'spock',
-      src: 'svg/spock.svg',
-    },
-  ]
-
-  const playerRandomImage = document.querySelector(
-    '.player-one-random-choice img'
-  )
-
-  let updateplayerRandomImage = (playerRandomImage.src = `svg/rock.svg`)
   // // Try again
   document
     .querySelector('.results input')
     .addEventListener('click', function () {
       resultScreen.classList.remove('show-screen')
+      resetGame()
     })
 }
 
