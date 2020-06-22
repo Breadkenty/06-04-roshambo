@@ -68,6 +68,7 @@ function resetGame() {
     .querySelector('.player-two-random-choice img')
     .classList.remove('show-winner')
   document.querySelector('.results h2:last-of-type').textContent = ''
+  document.querySelector('.results input').classList.add('hide')
 }
 
 const main = () => {
