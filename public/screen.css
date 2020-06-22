@@ -1,4 +1,4 @@
-@import url("https://use.typekit.net/kaq4chi.css");
+@import url('https://use.typekit.net/kaq4chi.css');
 :root {
   font: 16px / 1 sans-serif;
 }
@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: #F4E88D;
+  background-color: #f4e88d;
   font-family: gothic-open-shaded, sans-serif;
 }
 
@@ -38,7 +38,7 @@ nav h2 {
 
 nav h2:hover {
   transform: scale(1.1);
-  text-shadow: 2px 2px 2px #F4E88D;
+  text-shadow: 2px 2px 2px #f4e88d;
   transform: translate(-1px, -1px);
   -webkit-animation: radiate-small 0.75s infinite;
 }
@@ -71,7 +71,7 @@ nav div {
 .rules div {
   width: 100vw;
   height: 90vh;
-  background-color: #F4E88D;
+  background-color: #f4e88d;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -93,12 +93,13 @@ nav div {
   width: 80vw;
 }
 
-.player-one-turn, .player-two-turn {
+.player-one-turn,
+.player-two-turn {
   width: 100vw;
   height: 100vh;
   display: none;
   position: absolute;
-  background-color: #F4E88D;
+  background-color: #f4e88d;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -147,7 +148,7 @@ nav div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #F4E88D;
+  background-color: #f4e88d;
 }
 
 input {
@@ -156,12 +157,12 @@ input {
   border-radius: 5px;
   font-family: bungee, sans-serif;
   background-color: black;
-  color: #F4E88D;
+  color: #f4e88d;
   cursor: pointer;
   border: 0 solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
-  outline-color: rgba(255, 255, 255, .5);
+  outline-color: rgba(255, 255, 255, 0.5);
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -179,7 +180,7 @@ input:hover {
   height: 100vh;
   display: none;
   position: absolute;
-  background: #F4E88D;
+  background: #f4e88d;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -228,4 +229,8 @@ input:hover {
 
 .show-screen {
   display: flex;
+}
+
+.hide {
+  display: none;
 }

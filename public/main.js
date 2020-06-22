@@ -67,6 +67,7 @@ function resetGame() {
   document
     .querySelector('.player-two-random-choice img')
     .classList.remove('show-winner')
+  document.querySelector('.results h2:last-of-type').textContent = ''
 }
 
 const main = () => {
@@ -128,7 +129,30 @@ const main = () => {
       resultScreen.classList.add('show-screen')
       updatePlayerSelectionImage()
       const winnerDisplay = document.querySelector('.results h2:last-of-type')
-      winnerDisplay.textContent = whoWon()
+      let counter = 0
+      const images = [
+        'svg/rock.svg',
+        'svg/paper.svg',
+        'svg/scissor.svg',
+        'svg/lizard.svg',
+        'svg/spock.svg',
+      ]
+
+      const intervalId = setInterval(() => {
+        document.querySelector('.player-one-random-choice img').src =
+          images[counter % images.length]
+        document.querySelector('.player-two-random-choice img').src =
+          images[images.length - 1 - (counter % images.length)]
+        counter++
+        if (counter > 30) {
+          clearInterval(intervalId)
+          updatePlayerSelectionImage()
+          winnerDisplay.textContent = whoWon()
+        }
+        if (counter === 30) {
+          document.querySelector('.results input').classList.remove('hide')
+        }
+      }, 100)
     })
 
   // Results screen
