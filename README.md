@@ -1,6 +1,25 @@
 # 06-04 Roshambo!
 
+<img src="header.png" width="400">
+
+---
+
 Visit the live site: https://06-04-roshambo-kento.netlify.com/
+
+An interactive Rock - Paper - Scissors - Lizard - Spock game built on some frontend technologies. Some features it includes:
+
+- A graphic rule on how to play the game
+- Two players
+- The rock paper scissors game, but with lizard and spock as an additional option
+- Interactive result screen
+- Play again
+
+Technologies used:
+
+- HTML/CSS
+- Vanilla Javascript
+
+This project hones the basic vanilla Javascript skills before moving onto React to simplify the process. Some of the strengths of this assignment is understanding how to manipulate the DOM using Javascript.
 
 # Assignment Overview:
 
